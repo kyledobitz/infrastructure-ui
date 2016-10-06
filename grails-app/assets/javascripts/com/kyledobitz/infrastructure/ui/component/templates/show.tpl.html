@@ -1,0 +1,54 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="component.list" class="list">Component List</a></li>
+        <li><a class="create" ui-sref="component.create" class="create">New Component</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Component</h1>
+    <ol class="property-list component">
+  <li class="fieldcontain">
+    <span id="key-label" class="property-label">Key</span>
+    <div class="property-value" aria-labelledby="key-label">
+      <span>{{vm.component.key}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="name-label" class="property-label">Name</span>
+    <div class="property-value" aria-labelledby="name-label">
+      <span>{{vm.component.name}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="uuid-label" class="property-label">Uuid</span>
+    <div class="property-value" aria-labelledby="uuid-label">
+      <span>{{vm.component.uuid}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="server-label" class="property-label">Server</span>
+    <div class="property-value" aria-labelledby="server-label">
+      <span>{{vm.component.server}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="system-label" class="property-label">System</span>
+    <div class="property-value" aria-labelledby="system-label">
+      <span>{{vm.component.system}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="app-label" class="property-label">App</span>
+    <div class="property-value" aria-labelledby="app-label">
+      <a ui-sref="app.show({id: vm.component.app.id})">{{vm.component.app.toString()}}</a>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="component.edit({id: vm.component.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="app.list" class="list">App List</a></li>
+    </ul>
+</div>
+<div id="edit-app" class="content scaffold-edit" role="main">
+    <h1>Edit App</h1>
+    <ul class="errors" role="alert" ng-if="vm.errors">
+        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+    </ul>
+
+    <form name="updateApp" ng-submit="vm.updateApp()">
+        <fieldset class="form">
+            <ng-include src="'/com/kyledobitz/infrastructure/ui/app/form.html'"></ng-include>
+        </fieldset>
+        <fieldset class="buttons">
+            <input type="submit" class="save" value="Update" />
+        </fieldset>
+    </form>
+</div>

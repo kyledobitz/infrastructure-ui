@@ -1,0 +1,37 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="key">Key
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="key" id="key" ng-model="vm.component.key" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.component.name" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="uuid">Uuid
+      <span class="required-indicator">*</span>
+    </label>
+  </div>
+  <div class="fieldcontain required">
+    <label for="server">Server
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="server" id="server" ng-model="vm.component.server" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="system">System
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="system" id="system" ng-model="vm.component.system" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="app">App
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="app" id="app" ng-model="vm.component.app" ng-options="app for app in vm.appList track by app.id"></select>
+  </div>
+</fieldset>

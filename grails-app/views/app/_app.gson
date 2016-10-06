@@ -1,0 +1,7 @@
+import com.kyledobitz.infrastructure.ui.App
+
+model {
+	App app
+}
+
+json g.render(app)

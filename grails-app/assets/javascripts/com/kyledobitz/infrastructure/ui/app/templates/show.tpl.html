@@ -1,0 +1,36 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="app.list" class="list">App List</a></li>
+        <li><a class="create" ui-sref="app.create" class="create">New App</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show App</h1>
+    <ol class="property-list app">
+  <li class="fieldcontain">
+    <span id="key-label" class="property-label">Key</span>
+    <div class="property-value" aria-labelledby="key-label">
+      <span>{{vm.app.key}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="name-label" class="property-label">Name</span>
+    <div class="property-value" aria-labelledby="name-label">
+      <span>{{vm.app.name}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="uuid-label" class="property-label">Uuid</span>
+    <div class="property-value" aria-labelledby="uuid-label">
+      <span>{{vm.app.uuid}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="app.edit({id: vm.app.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

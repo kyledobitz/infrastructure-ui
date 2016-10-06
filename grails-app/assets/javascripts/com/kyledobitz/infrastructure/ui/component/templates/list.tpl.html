@@ -1,0 +1,50 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="component.create" class="create">New Component</a></li>
+    </ul>
+</div>
+<div id="list-component" class="content scaffold-list" role="main">
+    <h1>Component List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Key</th>
+      <th>Name</th>
+      <th>Uuid</th>
+      <th>Server</th>
+      <th>System</th>
+      <th>App</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="component in vm.componentList">
+      <td>
+        <a ui-sref="component.show({id: component.id})">{{component.id}}</a>
+      </td>
+      <td>
+        <span>{{component.key}}</span>
+      </td>
+      <td>
+        <span>{{component.name}}</span>
+      </td>
+      <td>
+        <span>{{component.uuid}}</span>
+      </td>
+      <td>
+        <span>{{component.server}}</span>
+      </td>
+      <td>
+        <span>{{component.system}}</span>
+      </td>
+      <td>
+        <a ui-sref="app.show({id: component.app.id})">{{component.app.toString()}}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

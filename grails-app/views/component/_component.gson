@@ -1,0 +1,7 @@
+import com.kyledobitz.infrastructure.ui.Component
+
+model {
+	Component component
+}
+
+json g.render(component)

@@ -1,0 +1,38 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="app.create" class="create">New App</a></li>
+    </ul>
+</div>
+<div id="list-app" class="content scaffold-list" role="main">
+    <h1>App List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Key</th>
+      <th>Name</th>
+      <th>Uuid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="app in vm.appList">
+      <td>
+        <a ui-sref="app.show({id: app.id})">{{app.id}}</a>
+      </td>
+      <td>
+        <span>{{app.key}}</span>
+      </td>
+      <td>
+        <span>{{app.name}}</span>
+      </td>
+      <td>
+        <span>{{app.uuid}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

@@ -16,6 +16,8 @@ class AppController {
 
     def show(App app) {
         respond app
+                .toBlocking()
+                .first()
     }
 
     @Transactional

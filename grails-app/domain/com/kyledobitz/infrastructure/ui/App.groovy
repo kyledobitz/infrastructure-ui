@@ -7,11 +7,12 @@ import grails.rest.Resource
 class App implements RxRestEntity<App> {
     String key
     String name
-//    String uuid
+    String uuid
 
     static constraints = {
         key blank:false
         name blank:false
+        uuid nullable:true
     }
 
     static mapping = {

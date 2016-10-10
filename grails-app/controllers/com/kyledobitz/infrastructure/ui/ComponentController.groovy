@@ -26,13 +26,17 @@ class ComponentController {
             return
         }
 
+        component.app = App.get(params.app?.id)
+
         if (component.hasErrors()) {
             transactionStatus.setRollbackOnly()
             respond component.errors, view:'create'
             return
         }
 
-        component.save flush:true
+        component.save
+                .toBlocking()
+                .first()
 
         respond component, [status: CREATED, view:"show"]
     }

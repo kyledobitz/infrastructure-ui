@@ -21,6 +21,7 @@ class Component implements RxRestEntity<Component> {
         server blank:false
         system blank:false
         app nullable:false
+        uuid nullable:true
     }
 
     static mapping = {
